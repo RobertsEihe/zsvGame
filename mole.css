@@ -102,8 +102,8 @@ button:hover {
     /* max-width: calc(25% - 10px);
     height: calc(25% - 10px); */
 
-    max-width: 70px;
-    height: 70px;
+    max-width: 90px;
+    height: 90px;
 
     margin: 5px;
     background-image: url("./ball.png");
