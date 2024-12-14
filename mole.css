@@ -99,8 +99,11 @@ button:hover {
     /*max-width: calc(33.33% - 10px);
     height: calc(33.33% - 10px);*/
 
-    max-width: calc(25% - 10px);
-    height: calc(25% - 10px);
+    /* max-width: calc(25% - 10px);
+    height: calc(25% - 10px); */
+
+    max-width: 70px;
+    height: 70px;
 
     margin: 5px;
     background-image: url("./ball.png");
