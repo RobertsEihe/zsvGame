@@ -97,11 +97,11 @@ function startMoleTimer() {
     clearTimeout(moleTimer);
 
     if (score < 30) moleTimer = setTimeout(setMole, 2000);
-    // if (score >= 30 && score < 50) moleTimer = setTimeout(setMole, 1500);
-    // if (score >= 50 && score < 60) moleTimer = setTimeout(setMole, 1000);
-    // if (score >= 60 && score < 80) moleTimer = setTimeout(setMole, 950);
-    // if (score >= 80 && score < 90) moleTimer = setTimeout(setMole, 900);
-    // if (score >= 90) moleTimer = setTimeout(setMole, 800);
+    if (score >= 30 && score < 50) moleTimer = setTimeout(setMole, 1500);
+    if (score >= 50 && score < 60) moleTimer = setTimeout(setMole, 1000);
+    if (score >= 60 && score < 80) moleTimer = setTimeout(setMole, 950);
+    if (score >= 80 && score < 90) moleTimer = setTimeout(setMole, 900);
+    if (score >= 90) moleTimer = setTimeout(setMole, 800);
 
 
     /*
