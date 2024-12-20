@@ -78,14 +78,21 @@ button:hover {
 }
 
 
+
+
+
+
 #board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(5, 1fr); /* 5 rows */
+    /*gap: 10px;*/ /* Space between cubes */
+
     width: 90%; /* Adjust for smaller screens */
-    height: auto;
-    max-width: 400px;
-    aspect-ratio: 1; /* Maintain square shape */
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    max-width: 600px; /* Set a max width for larger screens */
+    aspect-ratio: 3 / 5; /* Maintain 3:5 aspect ratio for the grid */
+    /*margin: 0 auto;*/ /* Center the board */
+   margin: auto;
     background: url(./glitter.png);
     background-size: cover;
     border: 3px solid white;
@@ -94,29 +101,25 @@ button:hover {
 }
 
 #board div {
-    position: relative;
-    flex: 1 1 30%; /* Adjust size dynamically */
-    /*max-width: calc(33.33% - 10px);
-    height: calc(33.33% - 10px);*/
-
-    /* max-width: calc(25% - 10px);
-    height: calc(25% - 10px); */
-
-    max-width: 90px;
-    height: 90px;
-
-    margin: 5px;
     background-image: url("./ball.png");
-    /*background-color: blue;*/
+    background-size: cover;
+    margin: 5px;
+    background-position: center;
     border-radius: 25px;
     border-style: solid;
     border-color: red;
-    background-size: cover;
-    background-position: center;
     transition: transform 0.5s;
     transform-style: preserve-3d;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
 
 
 
