@@ -3,7 +3,7 @@ body {
     text-align: center;
     color: white;
     background: url("./holiday-bg.jpg") no-repeat center center;;
-    background-size: cover;
+    background-size: auto;
     font-size: larger;
     margin: 0;
     padding: 0;
@@ -94,7 +94,7 @@ button:hover {
     /*gap: 10px;*/ /* Space between cubes */
 
     width: 90%; /* Adjust for smaller screens */
-    height: 50%;
+    height: 100dvh;
     max-width: 600px; /* Set a max width for larger screens */
     aspect-ratio: 3 / 5; /* Maintain 3:5 aspect ratio for the grid */
     /*margin: 0 auto;*/ /* Center the board */
