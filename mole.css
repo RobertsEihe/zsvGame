@@ -3,11 +3,10 @@ body {
     text-align: center;
     color: white;
     background: url("./holiday-bg.jpg") no-repeat center center;;
-    background-size: auto;
+    background-size: cover;
     font-size: larger;
     margin: 0;
     padding: 0;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 h1 {
@@ -17,6 +16,7 @@ h1 {
 
 #smashID {
     padding-top: 0px; 
+    margin: 0px;
 }
 /*
 #endMessage {
