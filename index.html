@@ -15,7 +15,8 @@
         </div>
         <h1>Dāvanas Saņemšanas Spēle</h1>
         <!--<p>You have 30 seconds to score 100 points. Gain 10 points for hitting the mole and lose 10 points for hitting the plant. Good luck!</p>-->
-        <p>Tev ir 30 sekunžu laikā jāiegūst 100 punkti, lai tiktu pie savas dāvanas. Lai iegūtu 10p tev ir jāspiež uz sava spēlētāja, zaudēsi 10p ja spiedīsi uz cita spēlētāja.</p>
+        <p>Tev ir 30 sekunžu laikā jāiegūst 100 punkti. Lai iegūtu 10p tev ir jāspiež uz sava spēlētāja, zaudēsi 10p, ja spiedīsi uz cita spēlētāja.</p>
+        <p>Tikai ar pareizo spēlētāju un Pro Modē var tik pie dāvanas.</p>
         <button id="toRules">Tālāk</button>
     </div>
 
@@ -23,7 +24,7 @@
     <!-- Page Containers -->
     <div id="page2" class="page">
         <h1>Izvēlies Spēlētāju</h1>
-        <p>*redzamie tēli ir izdomāti, tiem var būt tikai netīša līdzība ar īstiem cilvēkiem</p>
+        <p>*redzamie tēli ir izdomāti, tie var tikai sagadīšanās pēc atgādināt īstus cilvēkus</p><!-- tiem var būt tikai netīša līdzība ar īstiem cilvēkiem</p>-->
 
         <div id="characterGallery" class="gallery">
             <div class="gallery-wrapper">
@@ -48,7 +49,15 @@
             </div>
         </div>
         
-        <button id="startGame">Sākt spēli</button>
+        <button id="startGame">Sākt Spēli</button>
+
+        <div class="mode-toggle">
+            <label class="switch">
+                <input type="checkbox" id="modeSwitch">
+                <span class="slider"></span>
+            </label>
+            <span id="modeLabel">Mammas režīms</span>
+        </div>
 
     </div>
 

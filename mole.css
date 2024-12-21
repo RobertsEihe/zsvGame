@@ -11,7 +11,7 @@ body {
 
 h1 {
     margin: 10px 0;
-    padding-top: 50px; 
+    /*padding-top: 50px; */
 }
 
 #smashID {
@@ -121,35 +121,9 @@ button:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
 #board div.flipped {
     animation: flip 0.3s ease-in-out;
 }
-
-/*
-#board div {
-    position: relative;
-    flex: 1 1 30%; 
-    max-width: calc(33.33% - 10px);
-    height: calc(33.33% - 10px);
-    margin: 5px;
-    background-image: url("./ball.png");
-    background-color: blue;
-    border-radius: 25px;
-    background-size: cover;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-}
-*/
 
 @keyframes flip {
     0% {
@@ -255,13 +229,65 @@ button:hover {
 .santa-pic img {
     width: 70%;
     height: auto;
-    aspect-ratio: 1;
-    /*
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 1;  
+}
 
-margin-top: 30px;
-    */
-    
-    
+/* Container for toggle switch */
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    margin: 10px auto;
+    width: 70%;
+}
+
+/* Toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+/* Hide default checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider styling */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Checked state */
+input:checked + .slider {
+    background-color: red;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
 }
