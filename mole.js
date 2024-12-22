@@ -246,7 +246,11 @@ function endGame(message) {
     clearInterval(gameTimer);
 
     document.getElementById("endMessage").innerText = message;
-    document.getElementById("endScore").innerText = `Score: ${score}`;
+    if (proMode) {
+        document.getElementById("endScore").innerText = `Score Pro: ${score}`;
+    } else {
+        document.getElementById("endScore").innerText = `Score: ${score}`;
+    }
 
     const santaPic = document.querySelector(".santa-pic img");
     if (message === "Mission Passed!") {
@@ -257,7 +261,7 @@ function endGame(message) {
         santaPic.alt = "santa-sad";
     }
 
-    if (message === "Mission Passed!" && selectedCharacter == 3 && egaTrue && proMode == false) {
+    if (message === "Mission Passed!" && selectedCharacter == 3 && egaTrue && proMode) {
         alert("Mission Passed!\n \nParole: 4193");
     }
 
