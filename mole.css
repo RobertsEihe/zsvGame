@@ -128,7 +128,7 @@ button:hover {
 
 
 #board div.flipped {
-    animation: flip 0.3s ease-in-out;
+    animation: flip 0.2s ease-in-out;
 }
 
 @keyframes flip {
