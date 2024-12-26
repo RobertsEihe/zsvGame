@@ -54,10 +54,10 @@ function setupNavigation() {
     document.getElementById('modeSwitch').addEventListener('change', function () {
         const modeLabel = document.getElementById('modeLabel');
         if (this.checked) {
-            modeLabel.textContent = 'Pro Mode';
+            modeLabel.textContent = 'Challenge Mode';
             proMode = true;
         } else {
-            modeLabel.textContent = 'Mammas režīms';
+            modeLabel.textContent = 'Best Score Mode';
             proMode = false;
         }
     });
@@ -100,7 +100,7 @@ function startGameTimer() {
 
         if (timeLeft <= 0) {
             clearInterval(gameTimer);
-            endGame(score >= 100 ? "Mission Passed!" : "Game Over");
+            endGame(score >= 100 ? "Challenge Completed!" : "Game Over");
         }
     }, 1000);
 }
@@ -112,9 +112,21 @@ function startMoleTimer() {
         if (score < 30) moleTimer = setTimeout(setMole, 2000);
         if (score >= 30 && score < 50) moleTimer = setTimeout(setMole, 1900);
         if (score >= 50 && score < 60) moleTimer = setTimeout(setMole, 1800);
-        if (score >= 60 && score < 80) moleTimer = setTimeout(setMole, 1700);
-        if (score >= 80 && score < 90) moleTimer = setTimeout(setMole, 1600);
-        if (score >= 90) moleTimer = setTimeout(setMole, 1500);
+        if (score >= 60 && score < 70) moleTimer = setTimeout(setMole, 1700);
+        if (score >= 70 && score < 90) moleTimer = setTimeout(setMole, 1600);
+        if (score >= 90 && score < 100) moleTimer = setTimeout(setMole, 1500);
+        if (score >= 100 && score < 110) moleTimer = setTimeout(setMole, 1400);
+        if (score >= 110 && score < 120) moleTimer = setTimeout(setMole, 1300);
+        if (score >= 120 && score < 130) moleTimer = setTimeout(setMole, 1200);
+        if (score >= 130 && score < 140) moleTimer = setTimeout(setMole, 1100);
+        if (score >= 140 && score < 150) moleTimer = setTimeout(setMole, 1000);
+        if (score >= 150 && score < 160) moleTimer = setTimeout(setMole, 900);
+        if (score >= 160 && score < 170) moleTimer = setTimeout(setMole, 800);
+        if (score >= 170 && score < 180) moleTimer = setTimeout(setMole, 850);
+        if (score >= 180 && score < 190) moleTimer = setTimeout(setMole, 800);
+        if (score >= 190 && score < 200) moleTimer = setTimeout(setMole, 750);
+        if (score >= 200 && score < 210) moleTimer = setTimeout(setMole, 700);
+        if (score >= 210) moleTimer = setTimeout(setMole, 700);
     } else 
     // {
     //     if (score < 10) moleTimer = setTimeout(setMole, 2000);
@@ -247,9 +259,9 @@ function selectTile() {
         setMole();
     }
 
-    // if (score >= 100) {
-    //     endGame("Mission Passed!");
-    // }
+    if (score >= 100 && proMode) {
+        endGame("Challenge Completed!");
+    }
 }
 
 function endGame(message) {
@@ -260,12 +272,15 @@ function endGame(message) {
     document.getElementById("endMessage").innerText = message;
     if (proMode) {
         document.getElementById("endScore").innerText = `Score Pro: ${score}`;
+        if (message == "Challenge Completed!") {
+            document.getElementById("endTime").innerText = `Time: ${60 - timeLeft}`;
+        }
     } else {
         document.getElementById("endScore").innerText = `Score: ${score}`;
     }
 
     const santaPic = document.querySelector(".santa-pic img");
-    if (message === "Mission Passed!") {
+    if (message === "Challenge Completed!") {
         santaPic.src = "./santa/dab-santa-remove.png";
         santaPic.alt = "santa-dab";
     } else {
@@ -273,8 +288,8 @@ function endGame(message) {
         santaPic.alt = "santa-sad";
     }
 
-    if (message === "Mission Passed!" && selectedCharacter == 3 && egaTrue && proMode) {
-        alert("Mission Passed!\n \nParole: 4193");
+    if (message === "Challenge Completed!" && selectedCharacter == 3 && egaTrue && proMode) {
+        alert("Challenge Completed!\n \nParole: 4193");
     }
 
     navigateToPage("endScreen");
