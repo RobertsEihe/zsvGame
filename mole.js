@@ -76,6 +76,7 @@ function resetGame() {
     clearTimeout(moleTimer);
     clearInterval(gameTimer);
     document.getElementById("score").innerText = `Score: ${score} | Time: ${timeLeft}`;
+    document.getElementById("endTime").innerText = "";
 }
 
 function setGame() {
@@ -127,7 +128,9 @@ function startMoleTimer() {
         if (score >= 190 && score < 200) moleTimer = setTimeout(setMole, 750);
         if (score >= 200 && score < 210) moleTimer = setTimeout(setMole, 700);
         if (score >= 210) moleTimer = setTimeout(setMole, 700);
-    } else 
+    } else {
+        if (score < 10) moleTimer = setTimeout(setMole, 2000);
+    }
     // {
     //     if (score < 10) moleTimer = setTimeout(setMole, 2000);
     //     if (score >= 10 && score < 20) moleTimer = setTimeout(setMole, 1000);
@@ -135,21 +138,10 @@ function startMoleTimer() {
     //     if (score >= 30 && score < 40) moleTimer = setTimeout(setMole, 900);
     //     if (score >= 40 && score < 50) moleTimer = setTimeout(setMole, 850);
     //     if (score >= 50 && score < 60) moleTimer = setTimeout(setMole, 800);
-    //     if (score >= 60 && score < 80) moleTimer = setTimeout(setMole, 700);
-    //     if (score >= 80 && score < 90) moleTimer = setTimeout(setMole, 650);
+    //     if (score >= 60 && score < 80) moleTimer = setTimeout(setMole, 750);
+    //     if (score >= 80 && score < 90) moleTimer = setTimeout(setMole, 700);
     //     if (score >= 90) moleTimer = setTimeout(setMole, 650);
     // }
-    {
-        if (score < 10) moleTimer = setTimeout(setMole, 2000);
-        if (score >= 10 && score < 20) moleTimer = setTimeout(setMole, 1000);
-        if (score >= 20 && score < 30) moleTimer = setTimeout(setMole, 950);
-        if (score >= 30 && score < 40) moleTimer = setTimeout(setMole, 900);
-        if (score >= 40 && score < 50) moleTimer = setTimeout(setMole, 850);
-        if (score >= 50 && score < 60) moleTimer = setTimeout(setMole, 800);
-        if (score >= 60 && score < 80) moleTimer = setTimeout(setMole, 750);
-        if (score >= 80 && score < 90) moleTimer = setTimeout(setMole, 700);
-        if (score >= 90) moleTimer = setTimeout(setMole, 650);
-    }
 }
 
 function setMole() {
@@ -270,13 +262,12 @@ function endGame(message) {
     clearInterval(gameTimer);
 
     document.getElementById("endMessage").innerText = message;
-    if (proMode) {
-        document.getElementById("endScore").innerText = `Score Pro: ${score}`;
-        if (message == "Challenge Completed!") {
-            document.getElementById("endTime").innerText = `Time: ${60 - timeLeft}`;
-        }
+    document.getElementById("endScore").innerText = `Score: ${score}`;
+
+    if (proMode && message == "Challenge Completed!") {
+        document.getElementById("endTime").innerText = `Time: ${30 - timeLeft}`;
     } else {
-        document.getElementById("endScore").innerText = `Score: ${score}`;
+        document.getElementById("endTime").innerText = "";
     }
 
     const santaPic = document.querySelector(".santa-pic img");
