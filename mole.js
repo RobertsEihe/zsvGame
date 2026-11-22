@@ -221,6 +221,7 @@ function getCharacterImage(characterId) {
         "4": "roberts.png",
         "5": "estere.png",
         "6": "janis.png",
+        "7": "princese.png"
     };
     return characterMap[characterId];
 }
